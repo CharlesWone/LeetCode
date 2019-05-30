@@ -17,22 +17,22 @@
 解释: 输入数组表示数字 4321。
  */
 public class PlusOne_66 {
-	public int[] plusOne(int[] digits) {
-		digits[digits.length - 1]++;
-		for (int i = digits.length - 2; i >= 0; i--) {
-			if (digits[i] == 10) {
-				digits[i] = 0;
-				digits[i - 1]++;
-			}
-		}
+    public int[] plusOne(int[] digits) {
+        digits[digits.length - 1]++;
+        for (int i = digits.length - 1; i >= 0; i--) {
+            if (digits[i] == 10) {
+                digits[i] = 0;
+                digits[i - 1]++;
+            }
+        }
 
-		if (digits[0] == 10) {
-			int[] newArr = new int[digits.length + 1];
-			newArr[0] = 1;
-			System.arraycopy(digits, 0, newArr, 1, digits.length);
-			return newArr;
-		}
+        if (digits[0] == 10) {
+            int[] newArr = new int[digits.length + 1];
+            newArr[0] = 1;
+            System.arraycopy(digits, 0, newArr, 1, digits.length);
+            return newArr;
+        }
 
-		return digits;
-	}
+        return digits;
+    }
 }
