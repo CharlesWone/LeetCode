@@ -28,12 +28,7 @@ public class MergeSortedArray_88 {
         int ni = n-1;
         
         while(ni>=0) {
-            if(mi>=0 && nums1[mi]>nums2[ni]) {
-                nums1[li--] = nums1[mi];
-                nums1[mi--] = 0;
-            }else {
-                nums1[li--] = nums2[ni--];
-            }
+            nums1[li--] = mi>=0 && nums1[mi]>nums2[ni] ? nums1[mi--] : nums2[ni--];
         }
     }
     
