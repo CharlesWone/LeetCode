@@ -22,13 +22,14 @@ public class MergeSortedArray_88 {
     	Arrays.sort(nums1);
     }
     */
+	
+	//执行用时 : 1 ms, 在Merge Sorted Array的Java提交中击败了99.05% 的用户
+	//内存消耗 : 34.8 MB, 在Merge Sorted Array的Java提交中击败了95.46% 的用户
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int li = nums1.length-1;
-        int mi = m-1;
-        int ni = n-1;
+        int i = m--+--n;
         
-        while(ni>=0) {
-            nums1[li--] = mi>=0 && nums1[mi]>nums2[ni] ? nums1[mi--] : nums2[ni--];
+        while(n>=0) {
+            nums1[i--] = m>=0 && nums1[m]>nums2[n] ? nums1[m--] : nums2[n--];
         }
     }
     
