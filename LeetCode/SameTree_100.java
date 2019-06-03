@@ -11,14 +11,15 @@ public class SameTree_100 {
             return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
         return false;
     }
-}
+    
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
+        TreeNode(int x) {
+            val = x;
+        }
     }
 }
+
