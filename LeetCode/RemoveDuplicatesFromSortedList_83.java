@@ -44,14 +44,14 @@ public class RemoveDuplicatesFromSortedList_83 {
 		}
 		return head;
 	}
-	
-}
 
-class ListNode {
-	int val;
-	ListNode next;
+	class ListNode {
+		int val;
+		ListNode next;
 
-	ListNode(int x) {
-		val = x;
+		ListNode(int x) {
+			val = x;
+		}
 	}
 }
+
