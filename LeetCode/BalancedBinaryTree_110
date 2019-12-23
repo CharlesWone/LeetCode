@@ -1,0 +1,19 @@
+public class BalancedBinaryTree_110 {
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
+
+    public boolean isBalanced(TreeNode root) {
+        return root == null || isBalanced(root.left) & isBalanced(root.right) & Math.abs(depth(root.left) - depth(root.right)) <= 1;
+    }
+
+    private int depth(TreeNode node) {
+        return node == null ? 0 : Math.max(depth(node.left), depth(node.right)) + 1;
+    }
+}
