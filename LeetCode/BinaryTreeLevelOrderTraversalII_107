@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int x) {
+        val = x;
+    }
+}
+
+public class BinaryTreeLevelOrderTraversalII_107 {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        LinkedList<List<Integer>> result = new LinkedList<>();
+        List<TreeNode> rootList = new ArrayList<>();
+        if (root != null) {
+            rootList.add(root);
+        }
+        List<Integer> varList;
+        while (!rootList.isEmpty()) {
+            varList = new ArrayList<>();
+            rootList = getChildList(rootList, varList);
+            result.addFirst(varList);
+        }
+        return result;
+    }
+
+    private List<TreeNode> getChildList(List<TreeNode> param, List<Integer> valList) {
+        ArrayList<TreeNode> list = new ArrayList<>();
+        param.forEach(node -> {
+            valList.add(node.val);
+            if (node.left != null) {
+                list.add(node.left);
+            }
+            if (node.right != null) {
+                list.add(node.right);
+            }
+        });
+        return list;
+    }
+}
+
